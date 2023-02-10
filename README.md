@@ -1,18 +1,22 @@
-# Dm-Cabinet-of-Curiosities
+<img src="https://github.com/WilJonze/Dm-Cabinet-of-Curiosities/blob/main/img/Cabinet-of-Curiosities.jpg" width=100%>
 
-## A Dungeon Master's Companion into the Unknown!
+<h1 align="center">
+:sparkles::crystal_ball:The Cabinet of Curiosities:crystal_ball::sparkles:
 
-### v1.0 A Monster Maker 
+<h2 align="center">
+:crossed_swords::dragon:A Dungeon Master's Companion into the Unknown!:dragon::crossed_swords:
+
+### v1.0 A Monster Maker :japanese_ogre:
 
 Goal: Create a editable monster maker for dungeon master running a D&D campaign.
 
-### Features:
+### :magic_wand: Features:
 
 -Pull monsters from the SRD as a baseline that is capable of being used as is, or able to be completely manipulated by the DM as they see fit.
 
 -Save the monsters on a dashboard home screen for Dm's to access on demand. 
 
-### The Dream  
+### :crescent_moon: The Dream:  
 
 -Develop the project using the following: 
     Front-end: React 
