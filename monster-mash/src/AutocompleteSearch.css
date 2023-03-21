@@ -68,11 +68,13 @@
     padding: 8px 12px;
     transition: all .2s linear;
     border-top: 5px solid black;
+    
   }
 
   .show-results .results {
     display: block;
     padding: 10px;
+    width: ;
     
   }
   
