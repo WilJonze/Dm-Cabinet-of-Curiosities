@@ -1,8 +1,28 @@
-import React from 'react';
-import './StatBlock.css';
+import React, { useState, useRef, useEffect } from 'react';
+import StatBlock from './StatBlock';
+import './AccordionStat.css';
 
 
-const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
+const AccordionStat = ({ monsterData, handleRemoveMonster, index }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const panelRef = useRef(null);
+
+
+  const toggleAccordion = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (panel) {
+      if (isOpen) {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } else {
+        panel.style.maxHeight = null;
+      }
+    }
+  }, [isOpen]);
+
   const formatActions = (actions) => {
     if (!actions || !Array.isArray(actions) || actions.length === 0) {
       return [];
@@ -25,33 +45,40 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
        `${key} ${value}`).join(', ');
     }
 
-      const formatArmorClass = (armor_class) => {
-        return Object.entries(armor_class).map(([key, value]) =>
-          `${key} ${value}`).join(', ');
-      };
-    
-  
+  const formatArmorClass = (armor_class) => {
+    return Object.entries(armor_class).map(([key, value]) => 
+    `${key} ${value}`).join(', ');
+  };
+
   return (
-    <div className={`stat-block ${monsterData ? 'visible' : ''}`}>
+    <div className="accordion-container">
+    <div className="accordion">
       {monsterData && (
         <>
-          <div className="name">
+          <button className={`accordion-title ${isOpen ? 'active' : ''}`} onClick={() => setIsOpen(!isOpen)}>
             <h1>{monsterData.name}</h1>
             <button className="close-btn" onClick={() => handleRemoveMonster(monsterData)}>
               X
             </button>
-          </div>
-          <div className="property-line">
-            <h4>Armor Class :</h4>
-            <p>{(formatArmorClass(monsterData.armor_class))}</p>
+          </button>
+        
+          {isOpen && (
+            <div className="panel">
             
+              <div className="accordion-content">
+              </div>
+          <div className="property-line">
+          
+            <h4>Armor Class</h4>
+            <p>{formatArmorClass(monsterData.armor_class)}</p>
+        
           </div>
           <div className="property-line">
-            <h4>Hit Points :</h4>
+            <h4>Hit Points</h4>
             <p>{monsterData.hit_points}</p>
           </div>
           <div className="property-line last">
-            <h4>Speed :</h4>
+            <h4>Speed</h4>
             <p>{formatSpeed(monsterData.speed)}</p>
           </div>
           <div className="actions">
@@ -71,13 +98,15 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
                 <p>No legendary actions found.</p>
               )}
             </div>
-          </div>
+              </div>
+            </div>
+          )}
         </>
       )}
     </div>
+    </div>
   );
 };
- 
 
 
-export default StatBlock;
+export default AccordionStat;

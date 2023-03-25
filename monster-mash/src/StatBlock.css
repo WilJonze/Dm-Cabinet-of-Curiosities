@@ -1,20 +1,26 @@
 .stat-block {
-    text-align: left;
-    margin: 20px;
-    display: inline-block;
-    vertical-align: top;
-    width: 17%;
-    min-width: 280px;
-    background: #FDF1DC;
-    padding: 5px 10px 20px;
-    box-shadow: 0 0 1.5em #867453;
-    visibility: hidden;
+  text-align: left;
+  margin: 20px;
+  display: inline-block;
+  vertical-align: top;
+  width: 17%;
+  min-width: 280px;
+  background: #FDF1DC;
+  padding: 5px 10px 20px;
+  box-shadow: 0 0 1.5em #867453;
+  visibility: hidden;
+  border: 1px solid black;
+  border-radius: 4px;
+  
+
+  
+}
+
+  .stat-block.visible {
+    visibility: visible;
+    
   }
 
-    .stat-block.visible {
-        visibility: visible;
-    }
-  
   .stat-block.wide {
     width: 46.5%;
     min-width: 560px;
@@ -62,6 +68,13 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+  }
+
+  .stat-block .name span {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
   }
   
   .stat-block .name h1 {
@@ -138,3 +151,6 @@
     margin-left: 10px;
   }
   
+
+
+   
