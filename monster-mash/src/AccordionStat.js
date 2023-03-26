@@ -1,16 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
-import StatBlock from './StatBlock';
 import './AccordionStat.css';
 
 
 const AccordionStat = ({ monsterData, handleRemoveMonster, index }) => {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef(null);
-
-
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
-  };
 
   useEffect(() => {
     const panel = panelRef.current;

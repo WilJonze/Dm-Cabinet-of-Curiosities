@@ -21,17 +21,25 @@
     border-radius: 5px;
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.15);
     position: relative;
-    width: 75%;
+    width: 100%;
+    max-width: 600px;
   }
   
   input {
     background-color: #FDF1DC;
     width:100%;
     border: none;
-    height: 50px;
+    height: 40px;
     border-radius: 5px;
     font-size: 18px;
     box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
+    padding: 0 10px;
+    border-radius: 5px 5px 0 0;
+    transition: border-radius .2s linear;
+  }
+
+  input::placeholder{
+    font-family: 'IM Fell Great Primer', serif;
   }
   
   input:focus {
@@ -41,7 +49,7 @@
   .results {
     display: none;
     position: absolute;
-    width: 98.7%;
+    width: 100%;
     background-color: #FDF1DC; 
     border-radius: 0 0 5px 5px;
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.15); 
@@ -61,6 +69,10 @@
     transition: all .2s linear;
     border-top: 1px solid black;
     
+  }
+
+  .show-results input {
+    border-radius: 5px 5px 0 0;
   }
 
   .show-results .results {
@@ -86,6 +98,7 @@
   }
 
   .selected-monsters {
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -93,20 +106,45 @@
     
   }
 
-  .selected-monsters button {
-    display: flex;
-    align-self: center;
-    font-size: 20px;
-    cursor: pointer;
+  .selected-monsters-outer {
+    margin-top: 30px;
+    background: hsla(167, 10%, 60%, 1);
     border-radius: 5px;
-    transition: 0.5s;
-    background-color: #758f85;
-    color: #FDF1DC;
-    font-weight: bold;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
   }
 
-  .selected-monsters button:hover {
+  .selected-monsters-inner {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-family: 'IM Fell Great Primer', serif;
+    background: hsla(157, 10%, 51%, 1);
+    color: white;
+    transform: translateY(-6px);
+    transition: transform 1s ease-in-out;
+  }
+
+  .selected-monsters-outer:active .selected-monsters-inner {
+    transform: translateY(-2px);
+    transition: transform 1s ease-in-out;
+  }
+
+  .selected-monsters-inner:hover {
     background-color: #ca775a;
+    border-color: black;
+    color: black;
+    transition: 0.5s;
+  }
+
+  .selected-monsters-outer:hover {
+    background-color: black;
+    border-color: black;
+    color: black;
+    transition: 0.5s;
   }
 
  
@@ -129,4 +167,17 @@
   .highlighted {
     background-color: #ca775a;
     color: #fff;
+  }
+
+
+  @media screen and (min-width: 768px) {
+    .wrapper {
+      max-width: 800px; 
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .wrapper {
+      max-width: 1200px; 
+    }
   }

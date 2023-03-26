@@ -25,10 +25,15 @@ nav{
     color: #FDF1DC;
     text-decoration: none;
     font-size: 18px;
+    font-weight: bold;
   }
+
+
   
   .header .active {
-    font-weight: bold;
+    font-weight: bolder;
+    border-bottom: 2px solid #ca775a;
+    
   }
   
   .header a:hover {
@@ -39,7 +44,7 @@ nav{
 .logo-container {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: center;
     gap: 10px;
 }
 
@@ -51,4 +56,5 @@ nav{
 
 .title {
    color: #FDF1DC;
+   font-size: 40px;
 }

@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import './AutocompleteSearch.css';
 import './StatBlock.css'
 import StatBlock from './StatBlock';
 import AccordionStat from './AccordionStat';
 import {mixMonsters} from './Mashup';
+// import { saveMonsters, loadMonsters } from "./utils/storage.js";
+
+
 
 const AutocompleteSearch = () => {
   const [searchInput, setSearchInput] = useState('');
@@ -11,7 +14,22 @@ const AutocompleteSearch = () => {
   const [selectedMonsters, setSelectedMonsters] = useState([]);
   const [mashedMonsters, setMashedMonsters] = useState([]);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
-  const [accordionIndex, setAccordionIndex] = useState(0);
+  const [accordionIndex] = useState(0);
+
+  // useEffect(() => {
+  //   const loadedSelectedMonsters = loadMonsters("selectedMonsters");
+  //   const loadedMashedMonsters = loadMonsters("mashedMonsters");
+  //   setSelectedMonsters(loadedSelectedMonsters);
+  //   setMashedMonsters(loadedMashedMonsters);
+  // }, []);
+
+  // useEffect(() => {
+  //   saveMonsters("selectedMonsters", selectedMonsters);
+  // }, [selectedMonsters]);
+
+  // useEffect(() => {
+  //   saveMonsters("mashedMonsters", mashedMonsters);
+  // }, [mashedMonsters]);
 
   const handleKeyDown = async (e) => {
     if (e.key === 'Enter' && results.length > 0) {
@@ -103,7 +121,9 @@ const AutocompleteSearch = () => {
         className="visible"
       />
       {selectedMonsters.length > 1 && (
-        <button onClick={handleMixMonsters}>Mashup</button>
+        <button className="selected-monsters-outer" onClick={handleMixMonsters}>
+        <span className='selected-monsters-inner'>Mashup</span>
+        </button>
       )}
       {selectedMonsters.length > 1 && (
         <StatBlock
@@ -127,9 +147,6 @@ const AutocompleteSearch = () => {
           onKeyDown={handleKeyDown}
           placeholder="Search for a monster..."
         />
-        {/* <button className="search-button">
-          <i className="fa fa-search" />
-        </button> */}
         <div className={`results ${results.length > 0 ? 'show' : ''}`}>
           <ul>{renderResults}</ul>
         </div>
