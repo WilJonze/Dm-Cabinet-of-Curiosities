@@ -63,7 +63,7 @@ const AccordionStat = ({ monsterData, handleRemoveMonster, index }) => {
           </button>
         
           {isOpen && (
-            <div className="panel">
+            <div className="panel" ref={panelRef}>
             
               <div className="accordion-content">
               </div>

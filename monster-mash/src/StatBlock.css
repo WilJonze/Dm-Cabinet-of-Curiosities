@@ -19,6 +19,7 @@
   .stat-block.visible {
     visibility: visible;
     
+    
   }
 
   .stat-block.wide {
@@ -89,13 +90,18 @@
   }
   
   .stat-block .name button {
-    background-color: #E69A28;
-    color: #FFF;
+    background: transparent;
+    color: #922610;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
     font-size: 16px;
     cursor: pointer;
+  }
+
+  .stat-block .name button:hover {
+    background: #922610;
+    color: #FDF1DC;
   }
   
   .stat-block .property-line {

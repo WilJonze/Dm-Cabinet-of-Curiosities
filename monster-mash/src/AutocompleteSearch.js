@@ -127,9 +127,9 @@ const AutocompleteSearch = () => {
           onKeyDown={handleKeyDown}
           placeholder="Search for a monster..."
         />
-        <button className="search-button">
+        {/* <button className="search-button">
           <i className="fa fa-search" />
-        </button>
+        </button> */}
         <div className={`results ${results.length > 0 ? 'show' : ''}`}>
           <ul>{renderResults}</ul>
         </div>
