@@ -25,10 +25,14 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
        `${key} ${value}`).join(', ');
     }
 
-      const formatArmorClass = (armor_class) => {
-        return Object.entries(armor_class).map(([key, value]) =>
-          `${key} ${value}`).join(', ');
-      };
+    //  ArmorClass attempt to map over the array
+  const formatArmorClass = (armor_class) => {
+    if (!armor_class) {
+      return 10;
+    }
+    return Object.entries(armor_class).map(([key, value]) => 
+    `${key} ${value}`).join(', ');
+  };
     
   
   return (
@@ -41,11 +45,12 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
               X
             </button>
           </div>
+          {/* Start of AC layout */}
           <div className="property-line">
             <h4>Armor Class :</h4>
             <p>{(formatArmorClass(monsterData.armor_class))}</p>
-            
           </div>
+          {/* End of AC layout */}
           <div className="property-line">
             <h4>Hit Points :</h4>
             <p>{monsterData.hit_points}</p>
@@ -53,6 +58,34 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
           <div className="property-line last">
             <h4>Speed :</h4>
             <p>{formatSpeed(monsterData.speed)}</p>
+          </div>
+          <div className="abilities">
+          {/* The Start of the Abilities layout in the component. */}
+          <div className="property-line">
+            <h4>STR</h4>
+            <p>{monsterData.strength}</p>
+          </div>
+          <div className="property-line">
+            <h4>DEX</h4>
+            <p>{monsterData.dexterity}</p>
+          </div>
+          <div className="property-line">
+            <h4>CON</h4>
+            <p>{monsterData.constitution}</p>
+          </div>
+          <div className="property-line">
+            <h4>INT</h4>
+            <p>{monsterData.intelligence}</p>
+          </div>
+          <div className="property-line">
+            <h4>WIS</h4>
+            <p>{monsterData.wisdom}</p>
+          </div>
+          <div className="property-line">
+            <h4>CHA</h4>
+            <p>{monsterData.charisma}</p>
+          </div>
+          {/* END */}
           </div>
           <div className="actions">
             <h3>Actions</h3>

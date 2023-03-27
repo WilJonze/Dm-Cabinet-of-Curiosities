@@ -124,6 +124,35 @@
   .stat-block .property-line p {
     margin-left: 10px;
   }
+
+  .stat-block .last {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #7A200D;
+  }
+
+  .stat-block .abilities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .stat-block .abilities .property-line {
+    text-align: center;
+  }
+  
+  .stat-block .abilities .property-line h4 {
+    color: #7A200D;
+    margin-bottom: 5px;
+  }
+  
+  .stat-block .abilities .property-line p {
+    margin: 0;
+    color: #922610;
+    font-size: 13.5px;
+    line-height: 1.2em;
+  }
   
   .stat-block .actions {
     margin-top: 20px;

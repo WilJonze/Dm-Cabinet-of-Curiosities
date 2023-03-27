@@ -1,11 +1,10 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './AutocompleteSearch.css';
 import './StatBlock.css'
 import StatBlock from './StatBlock';
 import AccordionStat from './AccordionStat';
 import {mixMonsters} from './Mashup';
-// import { saveMonsters, loadMonsters } from "./utils/storage.js";
-
+import { saveToLocalStorage, loadFromLocalStorage, clearLocalStorage } from './localStorage';
 
 
 const AutocompleteSearch = () => {
@@ -16,20 +15,12 @@ const AutocompleteSearch = () => {
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const [accordionIndex] = useState(0);
 
-  // useEffect(() => {
-  //   const loadedSelectedMonsters = loadMonsters("selectedMonsters");
-  //   const loadedMashedMonsters = loadMonsters("mashedMonsters");
-  //   setSelectedMonsters(loadedSelectedMonsters);
-  //   setMashedMonsters(loadedMashedMonsters);
-  // }, []);
-
-  // useEffect(() => {
-  //   saveMonsters("selectedMonsters", selectedMonsters);
-  // }, [selectedMonsters]);
-
-  // useEffect(() => {
-  //   saveMonsters("mashedMonsters", mashedMonsters);
-  // }, [mashedMonsters]);
+  useEffect(() => {
+    const loadedMashedMonsters = loadFromLocalStorage('mashedMonsters');
+    if (loadedMashedMonsters) {
+      setMashedMonsters(loadedMashedMonsters);
+    }
+  }, []);
 
   const handleKeyDown = async (e) => {
     if (e.key === 'Enter' && results.length > 0) {
@@ -47,10 +38,15 @@ const AutocompleteSearch = () => {
   const handleMixMonsters = () => {
     if (selectedMonsters.length === 2) {
       const newMashedMonster = mixMonsters(selectedMonsters[0], selectedMonsters[1]);
-      setMashedMonsters([...mashedMonsters, newMashedMonster]);
+      const updatedMashedMonsters = [...mashedMonsters, newMashedMonster];
+      setMashedMonsters(updatedMashedMonsters);
       setSelectedMonsters([]);
+      saveToLocalStorage('mashedMonsters', updatedMashedMonsters);
     }
   };
+
+// API Fetch Request
+
   const handleInputChange = async (e) => {
     const { value } = e.target;
     setSearchInput(value);
@@ -70,35 +66,48 @@ const AutocompleteSearch = () => {
     }
   };
 
+  //Monster API data request after monster is selected
   const handleSelectMonster = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
     const {
       name,
-      type,
-      challenge_rating,
-      hit_points,
       armor_class,
+      hit_points,
       speed,
-      abilities,
+      strength,
+      dexterity,
+      constitution,
+      intelligence,
+      wisdom,
+      charisma,
       actions,
       legendary_actions,
     } = data;
+  
     const monsterStats = {
       name,
-      type,
-      challenge_rating,
-      hit_points,
       armor_class,
+      hit_points,
       speed,
-      abilities : abilities || [],
-      actions : actions || [],
-      legendary_actions : legendary_actions || [],
+      abilities: {
+        strength,
+        dexterity,
+        constitution,
+        intelligence,
+        wisdom,
+        charisma,
+      },
+      actions: actions || [],
+      legendary_actions: legendary_actions || [],
     };
+  
     setSelectedMonsters([...selectedMonsters, monsterStats]);
     setResults([]);
     setSearchInput('');
   };
+
+  // END OF MONSTER API DATA REQUEST
 
   const handleRemoveMonster = (index) => {
     setSelectedMonsters(selectedMonsters.filter((_, i) => i !== index));

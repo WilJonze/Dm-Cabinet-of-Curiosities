@@ -40,6 +40,9 @@ const AccordionStat = ({ monsterData, handleRemoveMonster, index }) => {
     }
 
   const formatArmorClass = (armor_class) => {
+    if (!armor_class) {
+      return 10;
+    }
     return Object.entries(armor_class).map(([key, value]) => 
     `${key} ${value}`).join(', ');
   };

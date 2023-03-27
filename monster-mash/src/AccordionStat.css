@@ -38,7 +38,8 @@
   padding: 0 18px;
   background-color: #FDF1DC;
   overflow: hidden;
-  display: none;
+  display: flex;
+
   max-height: 0;
   box-shadow: 0 0 1.5em #867453;
   transition: max-height 0.5s ease-out;
@@ -46,6 +47,7 @@
 
 .accordion-title.active + .panel {
   display: block;
+  text-align: center;
  
 }
 
