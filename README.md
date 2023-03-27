@@ -16,13 +16,16 @@ Goal: Create a editable monster maker for dungeon master running a D&D campaign.
 
 -Save the monsters on a dashboard home screen for Dm's to access on demand. 
 
-### :crescent_moon: The Dream:  
+### :crescent_moon: How to run this project: 
 
--Develop the project using the following: 
-    Front-end: React 
-    Database: Firebase
-    API: Open5e 
-    Backend: Node.js
+Node.js is require to run this project, please follow [This Link](https://nodejs.org/en/download) to download Node.js on your local machine.  
 
--Mobile app development using: 
-    React Native
+Next clone [This repository](https://github.com/WilJonze/Dm-Cabinet-of-Curiosities). 
+
+Once Downloaded run the follwing commands.
+
+`<npm install>`
+
+`<npm start>`
+
+At this point the project should be avalible to view. 
