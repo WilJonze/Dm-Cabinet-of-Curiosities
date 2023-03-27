@@ -3,6 +3,7 @@ import './StatBlock.css';
 
 
 const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
+  console.log(monsterData)
   const formatActions = (actions) => {
     if (!actions || !Array.isArray(actions) || actions.length === 0) {
       return [];
@@ -25,16 +26,19 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
        `${key} ${value}`).join(', ');
     }
 
-    //  ArmorClass attempt to map over the array
-  const formatArmorClass = (armor_class) => {
-    if (!armor_class) {
-      return 10;
-    }
-    return Object.entries(armor_class).map(([key, value]) => 
-    `${key} ${value}`).join(', ');
-  };
+    const formatArmorClass = (armor_class) => {
+      if (!armor_class) {
+        return 10; // return default AC if no AC provided
+      }
+      if (Array.isArray(armor_class)) {
+        return armor_class.map((acObj) => acObj.value).join(', '); // extract the AC value from each object and join with a comma separator
+      } else {
+        const armorEntries = Object.entries(armor_class);
+        const armorStrings = armorEntries.map(([index, element]) => `${index} ${element}`);
+        return armorStrings.join(', '); // join armor class strings with a comma separator
+      }
+    };
     
-  
   return (
     <div className={`stat-block ${monsterData ? 'visible' : ''}`}>
       {monsterData && (
@@ -48,7 +52,7 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
           {/* Start of AC layout */}
           <div className="property-line">
             <h4>Armor Class :</h4>
-            <p>{(formatArmorClass(monsterData.armor_class))}</p>
+              <p>{formatArmorClass(monsterData.armor_class)}</p>
           </div>
           {/* End of AC layout */}
           <div className="property-line">
@@ -63,27 +67,27 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
           {/* The Start of the Abilities layout in the component. */}
           <div className="property-line">
             <h4>STR</h4>
-            <p>{monsterData.strength}</p>
+            <p>{monsterData.abilities.strength}</p>
           </div>
           <div className="property-line">
             <h4>DEX</h4>
-            <p>{monsterData.dexterity}</p>
+            <p>{monsterData.abilities.dexterity}</p>
           </div>
           <div className="property-line">
             <h4>CON</h4>
-            <p>{monsterData.constitution}</p>
+            <p>{monsterData.abilities.constitution}</p>
           </div>
           <div className="property-line">
             <h4>INT</h4>
-            <p>{monsterData.intelligence}</p>
+            <p>{monsterData.abilities.intelligence}</p>
           </div>
           <div className="property-line">
             <h4>WIS</h4>
-            <p>{monsterData.wisdom}</p>
+            <p>{monsterData.abilities.wisdom}</p>
           </div>
           <div className="property-line">
             <h4>CHA</h4>
-            <p>{monsterData.charisma}</p>
+            <p>{monsterData.abilities.charisma}</p>
           </div>
           {/* END */}
           </div>

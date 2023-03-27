@@ -113,7 +113,8 @@
     display: inline;
     margin: 0;
     color: #922610;
-    font-size: 13.5px;
+    font-size: 16px;
+    font-weight: bold;
     line-height: 1.2em;
   }
   
@@ -139,16 +140,20 @@
   }
   
   .stat-block .abilities .property-line {
+    display: grid; 
+    grid-template-rows: auto auto;
+    align-items: center;
     text-align: center;
   }
   
   .stat-block .abilities .property-line h4 {
     color: #7A200D;
-    margin-bottom: 5px;
+    margin: 0;
   }
   
   .stat-block .abilities .property-line p {
     margin: 0;
+    font-weight: bold;
     color: #922610;
     font-size: 13.5px;
     line-height: 1.2em;
@@ -182,6 +187,7 @@
     color: #922610;
     font-size: 30px;
     font-weight: bold;
+    font-family: 'IM Fell Great Primer', serif;;
     cursor: pointer;
     margin-left: 10px;
   }

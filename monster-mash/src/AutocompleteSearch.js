@@ -105,6 +105,8 @@ const AutocompleteSearch = () => {
     setSelectedMonsters([...selectedMonsters, monsterStats]);
     setResults([]);
     setSearchInput('');
+    console.log(monsterStats);
+
   };
 
   // END OF MONSTER API DATA REQUEST

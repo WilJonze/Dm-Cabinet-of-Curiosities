@@ -51,6 +51,99 @@
  
 }
 
+.accordion .property-line {
+  margin-bottom: 10px;
+}
+
+.base {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #7A200D;
+  margin-top: 30px;
+}
+
+.accordion .property-line h4,
+.accordion .property-line p {
+  display: inline;
+  margin: 0;
+  color: #922610;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+.accordion .property-line h4 {
+  color: #7A200D;
+}
+
+.accordion .property-line p {
+  margin-left: 10px;
+}
+
+.accordion .last {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #7A200D;
+}
+
+
+.accordion .abilities {
+  display: grid;;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 0px
+}
+
+.accordion .abilities .property-line {
+  display: grid; 
+  grid-template-rows: auto auto;
+  align-items: center;
+  
+  text-align: center;
+}
+
+.accordion .abilities .property-line h4 {
+  color: #7A200D;
+  margin: 0;
+}
+
+.accordion .abilities .property-line p {
+  margin: 0;
+  font-weight: bold;
+  color: #922610;
+  font-size: 13.5px;
+  line-height: 1.2em;
+}
+
+.accordion .actions {
+  margin-top: 20px;
+  padding-top: 20px;
+  text-align: left;
+  
+}
+
+.accordion .actions h3 {
+  border-bottom: 1px solid #7A200D;
+  color: #7A200D;
+  font-size: 21px;
+  font-variant: small-caps;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  text-indent: 5px;
+}
+
+.accordion .property-block {
+  padding-top: 10px;
+}
+
+.accordion .property-block p {
+  margin-bottom: 5px;
+}
+
 .close-btn {
     background: transparent;
     color: #922610;

@@ -39,13 +39,18 @@ const AccordionStat = ({ monsterData, handleRemoveMonster, index }) => {
        `${key} ${value}`).join(', ');
     }
 
-  const formatArmorClass = (armor_class) => {
-    if (!armor_class) {
-      return 10;
-    }
-    return Object.entries(armor_class).map(([key, value]) => 
-    `${key} ${value}`).join(', ');
-  };
+    const formatArmorClass = (armor_class) => {
+      if (!armor_class) {
+        return 10; // return default AC if no AC provided
+      }
+      if (Array.isArray(armor_class)) {
+        return armor_class.map((acObj) => acObj.value).join(', '); // extract the AC value from each object and join with a comma separator
+      } else {
+        const armorEntries = Object.entries(armor_class);
+        const armorStrings = armorEntries.map(([index, element]) => `${index} ${element}`);
+        return armorStrings.join(', '); // join armor class strings with a comma separator
+      }
+    };
 
   return (
     <div className="accordion-container">
@@ -64,19 +69,47 @@ const AccordionStat = ({ monsterData, handleRemoveMonster, index }) => {
             
               <div className="accordion-content">
               </div>
+              <div className="base">
+            <div className="property-line">
+              <h4>Armor Class: </h4>
+              <p>{formatArmorClass(monsterData.armor_class)}</p>
+            </div>
+            <div className="property-line">
+              <h4>Hit Points: </h4>
+              <p>{monsterData.hit_points}</p>
+            </div>
+            <div className="property-line">
+              <h4>Speed: </h4>
+              <p>{formatSpeed(monsterData.speed)}</p>
+            </div>
+          </div>
+          <div className="abilities">
+          {/* The Start of the Abilities layout in the component. */}
           <div className="property-line">
-          
-            <h4>Armor Class</h4>
-            <p>{formatArmorClass(monsterData.armor_class)}</p>
-        
+            <h4>STR</h4>
+            <p>{monsterData.abilities.strength}</p>
           </div>
           <div className="property-line">
-            <h4>Hit Points</h4>
-            <p>{monsterData.hit_points}</p>
+            <h4>DEX</h4>
+            <p>{monsterData.abilities.dexterity}</p>
           </div>
-          <div className="property-line last">
-            <h4>Speed</h4>
-            <p>{formatSpeed(monsterData.speed)}</p>
+          <div className="property-line">
+            <h4>CON</h4>
+            <p>{monsterData.abilities.constitution}</p>
+          </div>
+          <div className="property-line">
+            <h4>INT</h4>
+            <p>{monsterData.abilities.intelligence}</p>
+          </div>
+          <div className="property-line">
+            <h4>WIS</h4>
+            <p>{monsterData.abilities.wisdom}</p>
+          </div>
+          <div className="property-line">
+            <h4>CHA</h4>
+            <p>{monsterData.abilities.charisma}</p>
+          </div>
+          {/* END */}
           </div>
           <div className="actions">
             <h3>Actions</h3>
