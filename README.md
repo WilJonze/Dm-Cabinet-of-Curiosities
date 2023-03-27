@@ -69,6 +69,6 @@ The Monster Mash project is hopefully going to be apart of a greater project cal
   
 There are 2 well known 5e API's and I joined the Discord of the one diffrent from the API I was using and asked a question about using it. Embarrassing!
   
-I regularly play D&D and renact my adventures to my wife after the game. She is very polite.
+I regularly play D&D and reenact my adventures to my wife after the game. She is very polite.
   
 
