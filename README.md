@@ -31,3 +31,13 @@ Then run the following commands.
 `<npm start>`
 
 At this point the project should be avalible to view. 
+
+If you are not familar with D&D and its monsters consdier using the following suggestions. 
+  
+  Monster 1: **Zombie**
+  Monster 2: **Goblin**
+   -OR- 
+  Monster 1: **Spider**
+  Monster 2: **Unicorn**
+  
+  D&D is a fantasy role-playing game, as such any such fantastical creature or monster should have some variation in the Manuel. 
