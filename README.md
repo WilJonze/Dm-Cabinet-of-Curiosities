@@ -27,15 +27,12 @@ Goal: Create a Monster Masher that creates a new creature using the monsters fou
 - [ ] Analyze data that is stored in arrays, objects, sets or maps and display information about it in your app.
 
 - [ ] Create a function that accepts two or more input parameters and returns a value that is calculated or determined by the inputs.
-  
-- [ ] Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event).
 
 - [ ] Implement modern interactive UI features (e.g. table/data sorting, autocomplete, drag-and-drop, calendar-date-picker, etc).. 
   
-- [ ] Visualize data in a userfriendly way. (e.g. graph, chart, etc)
-  
 - [ ] Develop your project using a common JavaScript framework such as React, Angular, or Vue.
 
+- [ ] Retrieve data from a third-party API and use it to display something within your app.
 
   
   <h2 align="center">:crescent_moon: How to run this project:</h2>
