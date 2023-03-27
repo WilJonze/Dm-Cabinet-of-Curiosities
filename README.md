@@ -22,7 +22,9 @@ Node.js is require to run this project, please follow [This Link](https://nodejs
 
 Next clone [This repository](https://github.com/WilJonze/Dm-Cabinet-of-Curiosities). 
 
-Once Downloaded run the follwing commands.
+Once Downloaded open the project and navagate to the `monster-mash` directory
+
+Then run the following commands. 
 
 `<npm install>`
 
