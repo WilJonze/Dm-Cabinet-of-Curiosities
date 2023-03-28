@@ -4,7 +4,7 @@ import './StatBlock.css'
 import StatBlock from './StatBlock';
 import AccordionStat from './AccordionStat';
 import {mixMonsters} from './Mashup';
-import { saveToLocalStorage, loadFromLocalStorage, clearLocalStorage } from './localStorage';
+import { saveToLocalStorage, loadFromLocalStorage, clearLocalStorage } from './utils/localStorage';
 
 
 const AutocompleteSearch = () => {
