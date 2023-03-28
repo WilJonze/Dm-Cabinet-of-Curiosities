@@ -182,3 +182,45 @@
       max-width: 1200px; 
     }
   }
+
+  @media screen and (max-width: 425px) {
+
+    .wrapper {
+      max-width: 100%;
+    }
+    
+    input {
+      font-size: 16px;
+    }
+    
+    .results ul li {
+      padding: 6px 10px;
+    }
+
+    .selected-monsters {
+     display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .selected-monsters button {
+      display: flex;
+      order: -1;
+      margin-bottom: 10px;
+    }
+    
+ 
+    @media screen and (min-width: 768px) {
+      .wrapper {
+        max-width: 500px;
+      }
+    }
+    
+    @media screen and (min-width: 1200px) {
+      .wrapper {
+        max-width: 800px;
+      }
+    }
+
+  }

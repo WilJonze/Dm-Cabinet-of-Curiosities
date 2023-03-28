@@ -5,7 +5,7 @@ const aboutStyle = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '50vh',
+    height: '75vh',
     width: '100vw',
 
 };
