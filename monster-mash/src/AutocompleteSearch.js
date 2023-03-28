@@ -42,6 +42,8 @@ const AutocompleteSearch = () => {
       setMashedMonsters(updatedMashedMonsters);
       setSelectedMonsters([]);
       saveToLocalStorage('mashedMonsters', updatedMashedMonsters);
+    } else if (selectedMonsters.length > 2) {
+      alert('Please choose only 2 monsters!');
     }
   };
 

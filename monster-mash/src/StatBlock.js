@@ -19,6 +19,7 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
         )}
       </li>
     ));
+    console.log(monsterData.legendary_actions)
   };   
 
   const formatSpeed = (speed) => {
