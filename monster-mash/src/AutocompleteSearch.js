@@ -47,8 +47,6 @@ const AutocompleteSearch = () => {
     }
   };
 
-// API Fetch Request
-
   const handleInputChange = async (e) => {
     const { value } = e.target;
     setSearchInput(value);
@@ -68,7 +66,6 @@ const AutocompleteSearch = () => {
     }
   };
 
-  //Monster API data request after monster is selected
   const handleSelectMonster = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
@@ -111,7 +108,6 @@ const AutocompleteSearch = () => {
 
   };
 
-  // END OF MONSTER API DATA REQUEST
 
   const handleRemoveMonster = (index) => {
     setSelectedMonsters(selectedMonsters.filter((_, i) => i !== index));

@@ -28,15 +28,12 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
     }
 
     const formatArmorClass = (armor_class) => {
-      if (!armor_class) {
-        return 10; // return default AC if no AC provided
-      }
       if (Array.isArray(armor_class)) {
-        return armor_class.map((acObj) => acObj.value).join(', '); // extract the AC value from each object and join with a comma separator
+        return armor_class.map((acObj) => acObj.value).join(', '); 
       } else {
         const armorEntries = Object.entries(armor_class);
         const armorStrings = armorEntries.map(([index, element]) => `${index} ${element}`);
-        return armorStrings.join(', '); // join armor class strings with a comma separator
+        return armorStrings.join(', '); 
       }
     };
     
@@ -50,12 +47,10 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
               X
             </button>
           </div>
-          {/* Start of AC layout */}
           <div className="property-line">
             <h4>Armor Class :</h4>
               <p>{formatArmorClass(monsterData.armor_class)}</p>
           </div>
-          {/* End of AC layout */}
           <div className="property-line">
             <h4>Hit Points :</h4>
             <p>{monsterData.hit_points}</p>
@@ -65,7 +60,6 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
             <p>{formatSpeed(monsterData.speed)}</p>
           </div>
           <div className="abilities">
-          {/* The Start of the Abilities layout in the component. */}
           <div className="property-line">
             <h4>STR</h4>
             <p>{monsterData.abilities.strength}</p>
@@ -90,7 +84,6 @@ const StatBlock = ({ monsterData, handleRemoveMonster, index }) => {
             <h4>CHA</h4>
             <p>{monsterData.abilities.charisma}</p>
           </div>
-          {/* END */}
           </div>
           <div className="actions">
             <h3>Actions</h3>

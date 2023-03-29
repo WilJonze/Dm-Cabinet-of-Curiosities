@@ -16,7 +16,12 @@ export const mixMonsters = (monster1, monster2) => {
         : (monster2.challenge_rating || ''),
     hit_points:
       Math.floor(((monster1.hit_points || 0) + (monster2.hit_points || 0)) / 2),
-    armor_class: Math.floor(((monster1.armor_class || 0) + (monster2.armor_class || 0)) / 2),
+      armor_class: [
+        {
+          type: "",
+          value: Math.floor(((monster1.armor_class[0].value) + (monster2.armor_class[0].value)) / 2),
+        }
+      ],
     speed: Math.random() < 0.5 ? (monster1.speed || '') : (monster2.speed || ''),
     abilities: {
       strength: randomAbilityScore(monster1.abilities?.strength, monster2.abilities?.strength),

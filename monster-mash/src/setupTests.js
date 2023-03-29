@@ -10,5 +10,4 @@ describe("AutocompleteSearch", () => {
     expect(screen.getByText("Search for two Monsters from the D&D manual and Mash em'")).toBeInTheDocument();
   });
 
-  // You can add more tests here, e.g. for user interactions, state changes, etc.
 });
