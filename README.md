@@ -12,6 +12,8 @@
   Long ago, When the World was full of mystery. A new form of collection was born, The Cabinet of Curiosities. This collection would take the form of a secret chamber, or perhaps as a piece of furnature. In these private collecions one my find forbidden books, strange paintings, or creatures of natural or unatural history. A dragon's tooth, a giants toe, a yeti's fur, each of these create a story. Beyond that a entry in to a mythical world. 
   
   This project aims to take the already fantasitcal, and make it more so. Experimenting with the Monster's found in D&D, use the search bar to find two monsters of your liking. Then click Mashup to forge a new creature. Discover a seemingly endless amount of new monsters for you future D&D game!
+
+This project is hosted on AWS Amiplify and can be viewed [here](https://main.d2p32gi6rdz3hw.amplifyapp.com/)!
   
 ### v1.0 A Monster Mash :japanese_ogre:
 
