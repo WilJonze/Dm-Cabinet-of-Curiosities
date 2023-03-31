@@ -13,7 +13,7 @@
   
   This project aims to take the already fantasitcal, and make it more so. Experimenting with the Monster's found in D&D, use the search bar to find two monsters of your liking. Then click Mashup to forge a new creature. Discover a seemingly endless amount of new monsters for you future D&D game!
 
-This project is hosted on AWS Amiplify and can be viewed [here](https://main.d2p32gi6rdz3hw.amplifyapp.com/)!
+This project is hosted on AWS Amplify and can be viewed [here](https://main.d2p32gi6rdz3hw.amplifyapp.com/)!
   
 ### v1.0 A Monster Mash :japanese_ogre:
 
